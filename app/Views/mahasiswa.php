@@ -1,1 +1,1 @@
-<h3>View Matakuliah</h3>
+<h3>View Mahasiswa</h3>
