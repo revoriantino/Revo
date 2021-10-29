@@ -8,7 +8,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
+              <i class="icon-file menu-icon"></i>
               <span class="menu-title">PENGAJUAN SKRIPSI</span>
               
             </a>
@@ -31,8 +31,8 @@
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/login"> Login </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/register"> Register </a></li>
               </ul>
             </div>
           </li>
