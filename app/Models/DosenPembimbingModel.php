@@ -14,7 +14,7 @@ class DosenPembimbingModel extends Model
     protected $returnType           = 'array';
     protected $useSoftDeletes       = false;
     protected $protectFields        = true;
-    protected $allowedFields        = [];
+    protected $allowedFields        = ['id', 'dosen_id', 'topik_id', 'status'];
 
     // Dates
     protected $useTimestamps        = false;
