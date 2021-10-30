@@ -14,8 +14,8 @@ class Bimbingan extends ResourceController
     {
         $data['title'] = "Bimbingans";
         $data['sidebar'] = view("layout/sidebar");
-        $data['content'] = view("bimbingan/index");
-        return view("layout/layout", $data);
+        $data['content'] = view("bimbingan");
+        return view("layout/welcome", $data);
     }
     
     public function read()
@@ -27,7 +27,7 @@ class Bimbingan extends ResourceController
     public function post()
     {
         $data = $this->request->getJSON();
-        $this->model->insert();
+        $this->model->insert($data);
         $data->id = $this->model->getInsertID();
         return $this->respond($data);
     }

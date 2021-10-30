@@ -14,8 +14,8 @@ class Topik extends ResourceController
     {
         $data['title'] = "Topiks";
         $data['sidebar'] = view("layout/sidebar");
-        $data['content'] = view("topik/index");
-        return view("layout/layout", $data);
+        $data['content'] = view("topik");
+        return view("layout/welcome", $data);
     }
     
     public function read()
@@ -27,7 +27,7 @@ class Topik extends ResourceController
     public function post()
     {
         $data = $this->request->getJSON();
-        $this->model->insert();
+        $this->model->insert($data);
         $data->id = $this->model->getInsertID();
         return $this->respond($data);
     }

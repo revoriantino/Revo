@@ -12,10 +12,10 @@ class Mahasiswa extends ResourceController
 
     public function index()
     {
-        $data['title'] = "Mahasiswa";
+        $data['title'] = "Mahasiswas";
         $data['sidebar'] = view("layout/sidebar");
-        $data['content'] = view("mahasiswa/index");
-        return view("layout/layout", $data);
+        $data['content'] = view("mahasiswa");
+        return view("layout/welcome", $data);
     }
     
     public function read()
@@ -27,7 +27,7 @@ class Mahasiswa extends ResourceController
     public function post()
     {
         $data = $this->request->getJSON();
-        $this->model->insert();
+        $this->model->insert($data);
         $data->id = $this->model->getInsertID();
         return $this->respond($data);
     }
