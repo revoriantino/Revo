@@ -20,16 +20,21 @@ class Topik extends ResourceController
     
     public function read()
     {
-        $data = $this->model->findAll();
+        $data = $this->model->select();
         return $this->respond($data);
     }
 
     public function post()
     {
-        $data = $this->request->getJSON();
-        $this->model->insert($data);
-        $data->id = $this->model->getInsertID();
-        return $this->respond($data);
+        try {
+            $data = $this->request->getJSON();
+            $this->model->save($data);
+            $data->id = $this->model->getInsertID();
+            return $this->respond($data);
+            //code...
+        } catch (\Throwable $th) {
+            return $this->fail($th->getMessage());
+        }
     }
     public function put($id = null)
     {

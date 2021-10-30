@@ -14,7 +14,7 @@ class TopiksModel extends Model
     protected $returnType           = 'array';
     protected $useSoftDeletes       = false;
     protected $protectFields        = true;
-    protected $allowedFields        = ['id', 'mahasiswa', 'judul', 'status'];
+    protected $allowedFields        = ['id', 'mahasiswa_id', 'judul', 'status'];
 
     // Dates
     protected $useTimestamps        = false;
@@ -39,4 +39,35 @@ class TopiksModel extends Model
     protected $afterFind            = [];
     protected $beforeDelete         = [];
     protected $afterDelete          = [];
+    protected $db;
+
+    public function __construct() {
+        $this->db = \Config\Database::connect();
+    }
+
+    public function select()
+    {
+        $data = $this->db->query("SELECT
+            `topiks`.*,
+            `mahasiswas`.`user_id`,
+            `mahasiswas`.`npm`,
+            `mahasiswas`.`jurusan_idjurusan`,
+            `mahasiswas`.`nama_mahasiswa`,
+            `mahasiswas`.`jenis_kelamin`,
+            `mahasiswas`.`alamat`,
+            `mahasiswas`.`email`,
+            `mahasiswas`.`agama`,
+            `mahasiswas`.`nisn`,
+            `mahasiswas`.`nik`,
+            `mahasiswas`.`tanggal_lahir`,
+            `mahasiswas`.`tempat_lahir`,
+            `mahasiswas`.`nama_ayah`,
+            `mahasiswas`.`nama_ibu`,
+            `mahasiswas`.`tgl_ayah`,
+            `mahasiswas`.`tgl_ibu`
+        FROM
+            `topiks`
+            LEFT JOIN `mahasiswas` ON `topiks`.`mahasiswas_id` = `mahasiswas`.`id`")->getResultArray();
+        return $data;
+    }
 }
