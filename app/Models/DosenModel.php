@@ -14,7 +14,7 @@ class DosenModel extends Model
     protected $returnType           = 'array';
     protected $useSoftDeletes       = false;
     protected $protectFields        = true;
-    protected $allowedFields        = ['id', 'user_id'];
+    protected $allowedFields        = ['id', 'user_id', 'nama_dosen', 'status'];
 
     // Dates
     protected $useTimestamps        = false;

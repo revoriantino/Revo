@@ -48,26 +48,30 @@ class TopiksModel extends Model
     public function select()
     {
         $data = $this->db->query("SELECT
-            `topiks`.*,
-            `mahasiswas`.`user_id`,
-            `mahasiswas`.`npm`,
-            `mahasiswas`.`jurusan_idjurusan`,
-            `mahasiswas`.`nama_mahasiswa`,
-            `mahasiswas`.`jenis_kelamin`,
-            `mahasiswas`.`alamat`,
-            `mahasiswas`.`email`,
-            `mahasiswas`.`agama`,
-            `mahasiswas`.`nisn`,
-            `mahasiswas`.`nik`,
-            `mahasiswas`.`tanggal_lahir`,
-            `mahasiswas`.`tempat_lahir`,
-            `mahasiswas`.`nama_ayah`,
-            `mahasiswas`.`nama_ibu`,
-            `mahasiswas`.`tgl_ayah`,
-            `mahasiswas`.`tgl_ibu`
-        FROM
-            `topiks`
-            LEFT JOIN `mahasiswas` ON `topiks`.`mahasiswas_id` = `mahasiswas`.`id`")->getResultArray();
+        `topiks`.*,
+        `mahasiswas`.`user_id`,
+        `mahasiswas`.`npm`,
+        `mahasiswas`.`jurusan_idjurusan`,
+        `mahasiswas`.`nama_mahasiswa`,
+        `mahasiswas`.`jenis_kelamin`,
+        `mahasiswas`.`alamat`,
+        `mahasiswas`.`email`,
+        `mahasiswas`.`agama`,
+        `mahasiswas`.`nisn`,
+        `mahasiswas`.`nik`,
+        `mahasiswas`.`tanggal_lahir`,
+        `mahasiswas`.`tempat_lahir`,
+        `mahasiswas`.`nama_ayah`,
+        `mahasiswas`.`nama_ibu`,
+        `mahasiswas`.`tgl_ayah`,
+        `mahasiswas`.`tgl_ibu`,
+        `penguji`.`dosen_id`,
+        `dosen`.`user_id` AS `user_id1`
+      FROM
+        `topiks`
+        LEFT JOIN `mahasiswas` ON `topiks`.`mahasiswas_id` = `mahasiswas`.`id`
+        LEFT JOIN `penguji` ON `topiks`.`id` = `penguji`.`topiks_id`
+        LEFT JOIN `dosen` ON `penguji`.`dosen_id` = `dosen`.`id`")->getResultArray();
         return $data;
     }
 }
