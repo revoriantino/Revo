@@ -10,7 +10,7 @@
 
         <li class="nav-item">
         <!-- <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic"> -->
-        <a class="nav-link" data-toggle="collapse" href="/pengajuan_skripsi" aria-expanded="false" aria-control="ui-basic">
+        <a class="nav-link" href="/pengajuan_skripsi" aria-expanded="false" aria-control="ui-basic">
                  <i class="icon-file menu-icon"></i> 
                   <span class="menu-title"> PENGAJUAN SKRIPSI </span> 
         </a>   
