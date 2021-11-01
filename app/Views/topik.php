@@ -1,12 +1,15 @@
 <div ng-controller = "topikController">
     <div class="col-md-12">
         <div class="card">
-            <div class="card-body">
-                <table class="table table-bordered">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        Daftar Topik
+                    </h5>
+                    <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Tahapan</th>
+                            <th>Topik</th>
                             <th>Urutan</th>
                         </tr>
                     </thead>
