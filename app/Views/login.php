@@ -14,10 +14,10 @@
   <!-- Plugin css for this page -->
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="../../images/favicon.png" />
 </head>
+  <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
 
 <body>
   <div class="container-scroller">
@@ -30,7 +30,7 @@
                
                 <img src="images/download.png" style="display:block; margin:auto;">
                 <h2 align="center"> W E L C O M E</h2>
-                  <form class="pt-3">
+                  <form class="pt-3" method="post" action=''>
                     <div class="form-group">
                      <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
                         </div>
@@ -38,7 +38,7 @@
                         <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
                        </div>
                       <div class="mt-3">
-                    <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN IN</a>
+                    <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" >SIGN IN</button>
                    </div>
                   <div class="my-2 d-flex justify-content-between align-items-center">
                 <div class="form-check">
