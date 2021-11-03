@@ -1,5 +1,5 @@
 <?php
-namespace App\Liberies;
+namespace App\Libraries;
 
 class Rest 
 {
@@ -8,7 +8,7 @@ class Rest
         $curl = curl_init();
 
         curl_setopt_array($curl, [
-        CURLOPT_URL => "http://10.10.20.67//api/v1/$url",
+        CURLOPT_URL => "http://10.10.20.105//api/v1/$url",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,

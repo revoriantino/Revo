@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Libraries\Rest;
 use CodeIgniter\RESTful\ResourceController;
 
 class Mahasiswa extends ResourceController
@@ -9,12 +10,20 @@ class Mahasiswa extends ResourceController
     protected $modelName = "App\Models\MahasiswaModel";
     protected $format = "json";
 
+    protected $rest;
+
+    function __construct() {
+        $this->rest = new Rest();
+    }
 
     public function index()
     {
+        $mahasiswaskripsi = $this->rest->callRest('mahasiswaskripsi');
+
         $data['title'] = "Mahasiswas";
         $data['sidebar'] = view("layout/sidebar");
         $data['content'] = view("mahasiswa");
+        $data['mahasiswaskripsi']= $mahasiswaskripsi;
         return view("layout/welcome", $data);
     }
     
