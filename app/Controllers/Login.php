@@ -9,4 +9,9 @@ class Login extends BaseController
         $data['title'] = "Login";
         return view("login", $data);
     }
+
+    public function login()
+    {
+        
+    }
 }
