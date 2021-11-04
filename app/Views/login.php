@@ -86,7 +86,7 @@
                     data: $scope.model
                 }).then(res => {
                     console.log(res.data);
-                    
+
                     $http({
                         method: "GET",
                         url: "http://10.10.20.204/api/v1/check",
