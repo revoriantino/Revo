@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="appLogin">
+<html lang="en" >
 
 <head>
     <!-- Required meta tags -->
@@ -30,14 +30,20 @@
 
                                 <img src="images/download.png" style="display:block; margin:auto;">
                                 <h2 align="center"> W E L C O M E</h2>
-                                <form class="pt-3" ng-submit="login()">
+                                <form class="pt-3" method="post" action="/login"> 
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-lg" id="exampleInputEmail1"
-                                            placeholder="Username" ng-model="model.username">
+                                        <input type="text" class="form-control form-control-lg <?= ($validation->hasError("username")) ? 'is-invalid' : ''?>" id="exampleInputEmail1"
+                                            placeholder="Username" name="username" >
+                                            <div class="invalid-feedback ml-2">
+                                              <?= $validation->getError("username");?>
+                                           </div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control form-control-lg"
-                                            id="exampleInputPassword1" placeholder="Password" ng-model="model.password">
+                                        <input type="password" class="form-control form-control-lg <?= ($validation->hasError("password")) ? 'is-invalid' : ''?>"
+                                            id="exampleInputPassword1" placeholder="Password" name="password">
+                                            <div class="invalid-feedback ml-2">
+                                              <?= $validation->getError("password");?>
+                                           </div>
                                     </div>
                                     <div class="mt-3">
                                         <button type="submit"
@@ -73,7 +79,7 @@
         <script src="../../js/todolist.js"></script>
 
         <script src="vendors/angular/angular.min.js"></script>
-        <script>
+        <!-- <script>
         angular.module("appLogin", [])
             .controller("loginController", loginController);
 
@@ -100,7 +106,7 @@
                 })
             }
         }
-        </script>
+        </script> -->
         <!-- endinject -->
 </body>
 
