@@ -38,7 +38,7 @@
         <div class="collapse" id="auth">
         <ul class="nav flex-column sub-menu">
         <li class="nav-item"> <a class="nav-link" href="/login"> Login </a></li>
-        <!-- <li class="nav-item"> <a class="nav-link" href="/register"> Register </a></li> -->
+        <li class="nav-item"> <a class="nav-link" href="/register"> Register </a></li>
         </ul>
         </div>
         </li>
