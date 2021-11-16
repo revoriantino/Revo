@@ -13,10 +13,14 @@ class pengajuan_skripsi extends ResourceController
 
     public function index()
     {
-        $data['title'] = "pengajuan_skripsi";
-        $data['sidebar'] = view("layout/sidebar");
-        $data['content'] = view("pengajuan_skripsi");
-        return view("pengajuan_skripsi", $data);
+        // $data['title'] = "pengajuan_skripsi";
+        $data =[
+            'title'  => 'Pengajuan Skripsi',
+            'sub_title' => 'Pengajuan Skripsi'
+        ];
+        // $data['sidebar'] = view("layout/sidebar");
+        // $data['content'] = view("halaman/pengajuan_skripsi");
+        return view("halaman/pengajuan_skripsi", $data);
     }
     
     public function read()
