@@ -14,10 +14,10 @@ class MahasiswaModel extends Model
     protected $returnType           = 'array';
     protected $useSoftDeletes       = false;
     protected $protectFields        = true;
-    protected $allowedFields        = ['id', 'user', 'jurusan_idjurusan', 'npm', 'nama_mahasiswa', 'jenis_kelamin', 'alamat', 'email', 'agama', 'nisn', 'nik', 'tanggal_lahir', 'tempat_lahir', 'nama_ayah', 'nama_ibu', 'tgl_ayah', 'tgl_ibu'];
+    protected $allowedFields        = ['id', 'nama_mahasiswa', 'jenis_kelamin', 'tanggal_lahir', 'id_perguruan_tinggi', 'id_mahasiswa', 'id_agama', 'nama_agama', 'id_prodi', 'nama_program_studi', 'nama_status_mahasiswa', 'nim', 'id_periode', 'nama_periode_masuk'];
 
     // Dates
-    protected $useTimestamps        = false;
+    protected $useTimestamps        = true;
     protected $dateFormat           = 'datetime';
     protected $createdField         = 'created_at';
     protected $updatedField         = 'updated_at';
@@ -35,8 +35,12 @@ class MahasiswaModel extends Model
     protected $afterInsert          = [];
     protected $beforeUpdate         = [];
     protected $afterUpdate          = [];
-    protected $beforeFind           = [];
+    protected $beforeFind           = [];       
     protected $afterFind            = [];
     protected $beforeDelete         = [];
     protected $afterDelete          = [];
+    
 }
+
+
+l
