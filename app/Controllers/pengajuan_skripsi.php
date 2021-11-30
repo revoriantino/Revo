@@ -3,11 +3,12 @@
 namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
+use App\Models\PengajuanM;
 
 class pengajuan_skripsi extends ResourceController
 {
     
-    protected $modelName = "App\Models\pengajuan_skripsimodel";
+    // protected $modelName = "";
     protected $format = "json";
 
 
