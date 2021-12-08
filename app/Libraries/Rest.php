@@ -8,7 +8,7 @@ class Rest
         $curl = curl_init();
 
         curl_setopt_array($curl, [
-        CURLOPT_URL => "http://10.10.20.129//api/v1/$url",
+        CURLOPT_URL => "http://10.10.20.6//api/v1/$url",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -34,7 +34,7 @@ class Rest
         $curl = curl_init();
 
         curl_setopt_array($curl, [
-            CURLOPT_URL => "http://10.10.20.129/api/v1/authentication",
+            CURLOPT_URL => "http://10.10.20.6/api/v1/authentication",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
@@ -64,7 +64,7 @@ class Rest
         $curl = curl_init();
 
         curl_setopt_array($curl, [
-            CURLOPT_URL => "http://10.10.20.129/api/v1/$url?$param",
+            CURLOPT_URL => "http://10.10.20.6/api/v1/$url?$param",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
