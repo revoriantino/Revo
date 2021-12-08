@@ -8,7 +8,7 @@ class Rest
         $curl = curl_init();
 
         curl_setopt_array($curl, [
-        CURLOPT_URL => "http://10.10.20.204//api/v1/$url",
+        CURLOPT_URL => "http://10.10.20.129//api/v1/$url",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -26,7 +26,7 @@ class Rest
         if ($err) {
         echo "cURL Error #:" . $err;
         } else {
-        return json_decode($response);
+        return json_decode($response); 
         }
     }
     public function login($username, $pass)

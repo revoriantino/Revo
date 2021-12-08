@@ -20,6 +20,7 @@
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+  <link href="vendors/summernote/summernote.min.css"> 
   <!-- endinject -->
   <link rel="shortcut icon" href="images/favicon.png" />
 </head>
@@ -63,12 +64,13 @@
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
               <img src="images/faces/RRQ.jpg" alt="profile" />
             </a>
+            <h4 class="ml-2 mt-2 font-weight-bold p-2"><?= session()->get("nama_mahasiswa") ?></h4>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
                 <i class="ti-settings text-primary"></i>
                 Settings
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="<?=base_url('/login/logout')?>">
                 <i class="ti-power-off text-primary"></i>
                 Logout
               </a>
@@ -228,6 +230,7 @@
   <script src="apps/services/helperServices.js"></script>
   <script src="apps/controller/admin.controllers.js"></script>
   <script src="apps/services/admin.services.js"></script>
+  <script src="public/vendors/summernote/summernote.min.js"></script>
   <!-- End custom js for this page-->
   <script>
     $(".js-example-basic-single").select2();
