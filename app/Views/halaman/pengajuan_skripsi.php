@@ -1,6 +1,8 @@
 <?= $this->extend('layout/Welcome');?>
 <?= $this->section('content');?>
-
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <div class="card mb-2">
     <div class="card-body">
         <div class="form-group">
@@ -29,8 +31,16 @@
         </div>
         <div class="mb-3">
             <label for="formFileMultiple" class="form-label">Unggah Judul Skripsi</label>
+            <div class="form-group">
+              <label for=""></label>
+              <textarea class="form-control" name="" id="editor">Testing Here</textarea>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="formFileMultiple" class="form-label">Unggah Judul Skripsi</label>
             <input class="form-control" type="file" id="formFileMultiple" multiple>
         </div>
+       
         <!-- <div class="dropify-wrapper">
             <div class="dropify-message d-flex justify-content-center align-items-center">
                 <span class="file-icon">

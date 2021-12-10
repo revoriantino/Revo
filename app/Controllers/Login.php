@@ -48,28 +48,33 @@ class Login extends ResourceController
             $username = $this->request->getPost('username');
             $pass = $this->request->getPost('password');
             $data = $rest->login($username, $pass);
-            $id = $data->data->id_mahasiswa;
-            $count = $mahasiswa->countAllresults();
-            if($count == 0){
-                $result = $rest->check("biodata", "GET", "param=id_mahasiswa&value='$id'");
-                $taMasuk = $result->data[0]->id_periode_masuk;
-                $tahun = substr($taMasuk, 0,-1);
-                $semester = 1;
-                for ($i=(int)$tahun; $i<(int)$tahunAktif ; $i++) { 
-                    $semester +=2;
-                }
-                if($semester >= 7){
-                    $mahasiswa->insert($result->data[0]);
-                    $result->data[0]->role = 'mahasiswa';
-                    session()->set($result->data[0]);
-                    return redirect()->to(base_url('home'));
+            if($data->status!=500){
+                $id = $data->data->id_mahasiswa;
+                $count = $mahasiswa->where("id_mahasiswa",$id)->countAllresults();
+                if($count == 0){
+                    $result = $rest->check("biodata", "GET", "param=id_mahasiswa&value='$id'");
+                    $taMasuk = $result->data[0]->id_periode_masuk;
+                    $tahun = substr($taMasuk, 0,-1);
+                    $semester = 1;
+                    for ($i=(int)$tahun; $i<(int)$tahunAktif ; $i++) { 
+                        $semester +=2;
+                    }
+                    if($semester >= 7){
+                        $mahasiswa->insert($result->data[0]);
+                        $result = $mahasiswa->where('id_mahasiswa',$id)->get()->getRowArray();
+                        session()->set($result);
+                        return redirect()->to(base_url('home'));
+                    }else{
+                        return redirect()->to(base_url('login'));
+                    }
                 }else{
-                    return redirect()->to(base_url('login'));
+                    $result = $mahasiswa->where('id_mahasiswa',$id)->get()->getRowArray();
+                    session()->set($result);
+                    return redirect()->to(base_url('home'));
                 }
+
             }else{
-                $result = $mahasiswa->where('id_mahasiswa',$id)->get()->getRowArray();
-                session()->set($result);
-                return redirect()->to(base_url('home'));
+                return redirect()->to(base_url('login'));
             }
             
         }

@@ -17,7 +17,7 @@ class MahasiswaModel extends Model
     protected $allowedFields        = ['id', 'nama_mahasiswa', 'jenis_kelamin', 'tanggal_lahir', 'id_perguruan_tinggi', 'id_mahasiswa', 'id_agama', 'nama_agama', 'id_prodi', 'nama_program_studi', 'nama_status_mahasiswa', 'nim', 'id_periode', 'nama_periode_masuk'];
 
     // Dates
-    protected $useTimestamps        = true;
+    protected $useTimestamps        = false;
     protected $dateFormat           = 'datetime';
     protected $createdField         = 'created_at';
     protected $updatedField         = 'updated_at';

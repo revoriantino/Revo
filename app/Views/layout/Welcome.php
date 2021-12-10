@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
@@ -20,7 +21,8 @@
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-  <link href="vendors/summernote/summernote.min.css"> 
+  <link href="vendors/wysiwyg/dist/css/highlight.min.css">
+  <link href="vendors/wysiwyg/dist/css/wysiwyg.min.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="images/favicon.png" />
 </head>
@@ -230,10 +232,29 @@
   <script src="apps/services/helperServices.js"></script>
   <script src="apps/controller/admin.controllers.js"></script>
   <script src="apps/services/admin.services.js"></script>
-  <script src="public/vendors/summernote/summernote.min.js"></script>
+  <script src="vendors/wysiwyg/dist/js/highlight.min.js"></script>
+  <script src="vendors/wysiwyg/dist/js/wysiwyg.min.js"></script>
   <!-- End custom js for this page-->
   <script>
     $(".js-example-basic-single").select2();
+    $('#editor').wysiwyg({
+      toolbar: [
+        ['mode'],
+        ['operations', ['undo', 'rendo', 'cut', 'copy', 'paste']],
+        ['styles'],
+        ['fonts', ['select', 'size']],
+        ['text', ['bold', 'italic', 'underline', 'strike', 'subscript', 'superscript', 'font-color', 'bg-color']],
+        ['align', ['left', 'center', 'right', 'justify']],
+        ['lists', ['unordered', 'ordered', 'indent', 'outdent']],
+        ['components', ['table', /*'chart'*/]],
+        ['intervals', ['line-height', 'letter-spacing']],
+        ['insert', ['emoji', 'link', 'image', '<a href="https://www.jqueryscript.net/tags.php?/video/">video</a>', 'symbol', /*'bookmark'*/]],
+        ['special', ['print', 'unformat', 'visual', 'clean']],
+        /*['fullscreen'],*/
+      ],
+      mode: 'source',
+      translations: {},
+    });
   </script>
 </body>
 
