@@ -33,7 +33,7 @@
             <label for="formFileMultiple" class="form-label">Unggah Judul Skripsi</label>
             <div class="form-group">
               <label for=""></label>
-              <textarea class="form-control" name="" id="editor" placeholder="Masukan judul"></textarea>
+              <textarea class="form-control" name="" id="editor" placeholder="Masukan judul">Masukan Judul</textarea>
             </div>
         </div>
         <div class="mb-3">
